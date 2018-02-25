@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block body_block %}
+    <table id = "dbtable" class="pure-table tablesorter">
+    <thead>
+    <tr>
+        <td>professor_name</td><td>ccn</td><td>rating</td><td>salary</td><td>position</td><td>homepage</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for prof in table %}
+       <tr>
+        <td>{{ prof.professor_name }}</td><td>{{ prof.ccn }}</td><td>{{ prof.rating }}</td><td>{{ prof.salary }}</td><td>{{ prof.position }}</td><td>{{ prof.homepage }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    <form method="POST">
+    <label>professor_name:</label><input type="text" name="professor_name"><br/>
+    <label>ccn:</label><input type="text" name="ccn"><br/>
+    <label>rating:</label><input type="text" name="rating"><br/>
+    <label>salary:</label><input type="text" name="salary"><br/>
+    <label>position:</label><input type="text" name="position"><br/>
+    <label>homepage:</label><input type="text" name="homepage"><br/>
+    <input type="submit" value="Add Row">
+    </form>
+{% endblock %}

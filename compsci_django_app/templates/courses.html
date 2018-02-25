@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block body_block %}
+    <table class="pure-table">
+    <thead>
+    <tr>
+        <td>ccn</td><td>course_title</td><td>course_code</td><td>section_no</td><td>description</td><td>time</td><td>room_no</td><td>building_name</td><td>course_type</td><td>units</td><td>exam</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for course in table %}
+       <tr>
+        <td>{{ course.ccn }}</td><td>{{ course.course_title }}</td><td>{{ course.course_code }}</td><td>{{ course.section_no }}</td><td>{{ course.description }}</td><td>{{ course.time }}</td><td>{{ course.room_no }}</td><td>{{ course.building_name }}</td><td>{{ course.course_type }}</td><td>{{ course.units }}</td><td>{{ course.exam }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    <form method="POST">
+    <label>ccn:</label><input type="text" name="ccn"><br/>
+    <label>course_title:</label><input type="text" name="course_title"><br/>
+    <label>course_code:</label><input type="text" name="course_code"><br/>
+    <label>section_no:</label><input type="text" name="section_no"><br/>
+    <label>description:</label><input type="text" name="description"><br/>
+    <label>time:</label><input type="text" name="time"><br/>
+    <label>room_no:</label><input type="text" name="room_no"><br/>
+    <label>building_name:</label><input type="text" name="building_name"><br/>
+    <label>course_type:</label><input type="text" name="course_type"><br/>
+    <label>units:</label><input type="text" name="units"><br/>
+    <label>exam:</label><input type="text" name="exam"><br/>
+    <input type="submit" value="Add Row">
+    </form>
+{% endblock %}

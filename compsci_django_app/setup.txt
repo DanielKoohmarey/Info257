@@ -1,0 +1,17 @@
+Installing MySQL for Ubuntu
+
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+mysql -p -u root -h localhost
+mysql> CREATE DATABASE database_name;
+mysql> USE database_name;
+mysql> source ~/Desktop/compsci.sql
+Installing Django
+
+sudo apt-get install python-django
+Installing and setting up Python MySQL
+
+sudo apt-get install python-mysqldb
+python manage.py syncdb
+python manage.py runserver
+127.0.0.1:8000

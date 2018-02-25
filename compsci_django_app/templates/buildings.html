@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block body_block %}
+    <table class="pure-table">
+    <thead>
+    <tr>
+        <td>building_name</td><td>history</td><td>built</td><td>namesake</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for building in table %}
+       <tr>
+        <td>{{ building.building_name }}</td><td>{{ building.history }}</td><td>{{ building.built }}</td><td>{{ building.namesake }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    <form method="POST">
+    <label>building_name:</label><input type="text" name="building_name"><br/>
+    <label>history:</label><input type="text" name="history"><br/>
+    <label>built:</label><input type="text" name="built"><br/>
+    <label>namesake:</label><input type="text" name="namesake"><br/>
+    <input type="submit" value="Add Row">
+    </form>
+{% endblock %}

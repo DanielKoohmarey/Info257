@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block body_block %}
+    <table class="pure-table">
+    <thead>
+    <tr>
+        <td>person_name</td><td>course_codes</td><td>day</td><td>time</td><td>building_name</td><td>room_no</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for tutor in table %}
+       <tr>
+        <td>{{ tutor.person_name }}</td><td>{{ tutor.course_codes }}</td><td>{{ tutor.day }}</td><td>{{ tutor.time }}</td><td>{{ tutor.building_name }}</td><td>{{ tutor.room_no }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    <form method = "POST">
+    <label>person_name:</label><input type="text" name="person_name"><br/>
+    <label>course_codes:</label><input type="text" name="course_codes"><br/>
+    <label>day:</label><input type="text" name="day"><br/>
+    <label>time:</label><input type="text" name="time"><br/>
+    <label>building_name:</label><input type="text" name="building_name"><br/>
+    <label>room_no:</label><input type="text" name="room_no"><br/>
+    <input type="submit" value="Add Row">
+    </form>
+{% endblock %}

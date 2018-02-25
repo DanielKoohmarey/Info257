@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title> Info 257 </title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <!--<link rel="stylesheet" href="/static/style.css">-->
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/static/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/static/jquery.tablesorter.js"></script>
+    <style>
+    body{
+        font-family: 'Abel', sans-serif;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        float: left;
+        display: block;
+        width: 60px;
+        background: blue;
+        padding: 15px 25px;
+        color: white;
+        
+    }
+    #navbar a {
+       text-decoration: none;
+       color: white;
+      }
+    #navbar {
+      padding-bottom:50px;
+    }
+    li:hover {
+        background: white;
+        color: blue;
+    }
+    label{
+        display: inline-block;
+        float: left;
+        clear: left;
+        width: 150px;
+        text-align: left;
+    }
+    input {
+        display: inline-block;
+        float: left;
+    }
+    td {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 500px;
+     }
+    </style>
+</head>
+<h1>Berkeley Computer Science Directory</h1>
+<body>
+    <div id="navbar">
+    <ul>
+        <a href="/courses"><li>Courses</li></a>
+        <a href="/professors"><li>Professors</li></a>
+        <a href="/assistants"><li>Assistants</li></a>
+        <a href="/tutors"><li>Tutors</li></a>
+        <a href="/buildings"><li>Buildings</li></a>
+    </ul>
+    </div>
+    <br/>
+{% block body_block %}{% endblock %}    
+    <script>
+    $(document).ready(function() 
+        { 
+            $("#dbtable").tablesorter(); 
+        } 
+    ); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block body_block %}
+    <table class="pure-table">
+    <thead>
+    <tr>
+        <td>person_name</td><td>ccn</td><td>officer</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for assistant in table %}
+       <tr>
+        <td>{{ assistant.person_name }}</td><td>{{ assistant.ccn }}</td><td>{{ assistant.officer }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    {% if not table %}
+    <br/>
+    <span style="color:red">No search results found.</span>
+    <br/>
+    {% endif %}
+    <br/>
+
+    <form method="POST">
+    <label>assistant_name:</label><input type="text" name="person_name"><br/>
+    <label>ccn:</label><input type="text" name="ccn"><br/>
+    <label>officer:</label><input type="checkbox" name="officer"><br/>
+    <br/>
+    <input type="submit" name="add" value="Add Row">
+    <input type="submit" name="search" value="Search">
+    </form>
+{% endblock %}
